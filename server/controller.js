@@ -24,5 +24,20 @@ module.exports = {
         const { compliment } = req.body;
         res.status(200).send(compliment)
      },
+    getQuotes: (req, res) => {
+        console.log(req)
+        const quotes = [ "If you are afraid of loneliness, don't marry", "Don't get mad, get even.", "Some people are like Slinky's. Pretty much useless but make you smile when you push them down the stairs."];
+
+        // choose random quote
+        let randomIndex = Math.floor(Math.random() * randomQuotes.length);
+        let randomQuotes = quote[randomIndex];
+
+        res.status(200).send(randomQuotes);
+    },
+    addFortune: (req, res) => {
+        console.log(req.body)
+        const { fortune } = req.body;
+        res.status(200).send(fortune)
+    },
 
 }
